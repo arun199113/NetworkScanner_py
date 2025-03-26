@@ -1,6 +1,16 @@
 import socket
 import ipaddress
 import threading
+import subprocess
+import sys
+
+# Automatically install required dependencies
+def install_dependencies():
+    dependencies = ['psutil', 'ping3']
+    subprocess.check_call([sys.executable, '-m', 'pip', 'install', *dependencies])
+
+install_dependencies()
+
 import psutil
 from ping3 import ping
 import tkinter as tk
